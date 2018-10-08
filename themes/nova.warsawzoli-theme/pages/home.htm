@@ -1,0 +1,322 @@
+title = "Home"
+url = "/"
+layout = "index"
+is_hidden = 0
+
+[DevINX\ContactUs\Components\ContactForm contactForm]
+injectBootstrapAssets = 0
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+postsPerPage = 0
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "singleBlogPost"
+==
+<!-- Banner -->
+<section id="banner" class="major">
+	<div class="inner">
+		<header class="major">
+			<img id='district-logo-hero' src="{{'assets/images/zoliborz_logo.png'|theme}}" alt="" srcset="">
+			<h1></h1>
+		</header>
+		<div class="content">
+			<p class='greetings-paragraph'>Czuwaj! To strona hufca ZHP Warszawa-Żoliborz<br />
+				Sprawdź bieżące wydarzenia poniżej lub zajrzyj do menu!</p>
+			<ul class="actions scrollLinks">
+				<li>
+					<a href="#one" class="button scrollLinks--btn scrolly">
+						<span>Aktualności</span>
+						<i class="far fa-2x fa-newspaper"></i>
+					</a>
+				</li>
+				<li>
+					<a href="#two" class="button scrollLinks--btn scrolly">
+						<span> Kalendarz </span>
+						<i class="far fa-2x fa-calendar-alt"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="hero-menu">
+		<ul id='desktopMenu' class="links actions vertical">
+			<li><a class='button fit menu-link' href="#" data-menu-name='Komenda hufca'>Władze hufca</a></li>
+			<li><a class='button fit menu-link' href="#" data-menu-name='Zespoły hufca'>Zespoły
+					hufca</a></li>
+			<li><a class='button fit menu-link' href="#" data-menu-name='Namiestnictwa'>Środowiska w hufcu</a></li>
+			<li><a class='button fit menu-link' href="#" data-menu-name='Kontakt'>Kontakt</a></li>
+			<li><a class='button fit menu-link' href="#" data-menu-name='Strefa instruktora'>Strefa instruktora</a></li>
+			<li><a class='button special fit menu-link' href="#" data-menu-name='Zagajnik'>Zagajnik</a></li>
+		</ul>
+	</div>
+	<div class="hero-menu-expanded">
+		<div id='submenu1' class="hero-menu-expanded--submenu" data-menu-name='Komenda hufca'>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-university"></i>
+					<span>Komenda hufca</span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-chalkboard-teacher"></i>
+					<span>Sąd harcerski hufca</span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-book-reader"></i>
+					<span>Komisja rewizyjna hufca </span>
+				</div>
+			</a>
+
+		</div>
+		<div id='submenu2' class="hero-menu-expanded--submenu" data-menu-name='Zespoły hufca'>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-university"></i>
+					<span>Żoliborska Szkoła Kadry Instruktorskiej</span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-chalkboard-teacher"></i>
+					<span>Komisja Stopni Instruktorskich</span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-book-reader"></i>
+					<span>Namiestnictwo zuchowe </span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-book-reader"></i>
+					<span>Namiestnictwo harcerskie</span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-book-reader"></i>
+					<span>Namiestnictwo starszoharcerskie</span>
+				</div>
+			</a>
+		</div>
+		<div id='submenu3' class="hero-menu-expanded--submenu" data-menu-name='Namiestnictwa'>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas  fa-2x fa-map-marked-alt"></i>
+					<span>Mapa środowisk</span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-clipboard-list"></i>
+					<span>Lista środowisk</span>
+				</div>
+			</a>
+		</div>
+		<div id='submenu4' class="hero-menu-expanded--submenu" data-menu-name='Kontakt'>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-hand-pointer"></i>
+					<span>Klik!</span>
+				</div>
+			</a>
+		</div>
+		<div id='submenu5' class="hero-menu-expanded--submenu" data-menu-name='Strefa instruktora'>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="far fa-2x fa-user-circle"></i>
+					<span>Staże w hufcu</span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-clipboard-list"></i>
+					<span>Hufcowe wykazy</span>
+				</div>
+			</a>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-question-circle"></i>
+					<span>Jak to załatwić?</span>
+				</div>
+			</a>
+		</div>
+		<div id='submenu5' class="hero-menu-expanded--submenu" data-menu-name='Zagajnik'>
+			<a href='{{"/landing" |app}}'>
+				<div>
+					<i class="fas fa-2x fa-hand-pointer"></i>
+					<span>Klik!</span>
+				</div>
+			</a>
+		</div>
+	</div>
+
+</section>
+
+<!-- Main -->
+<div id="main">
+
+	<section id='dcsStatementsWidget'>
+		<div class='custom-widget widget-space-1'>
+			<header class="major">
+				<h2>Rozkazy i komunikaty</h2>
+			</header>
+		</div>
+		<div class='custom-widget widget-space-2'>
+			<div class="widget-list">
+				<ul>
+					<a href="#">
+						<li>Rozkaz L../2018</li>
+					</a>
+					<a href="#">
+						<li>Rozkaz L../2018</li>
+					</a>
+					<a href="#">
+						<li>Rozkaz L../2018</li>
+					</a>
+					<a href="#">
+						<li>Rozkaz L../2018</li>
+					</a>
+					<a href="#">
+						<li>Rozkaz L../2018</li>
+					</a>
+				</ul>
+			</div>
+			<div class="widget-list">
+				<ul>
+					<a href="#">
+						<li>Komunikat 1111111</li>
+					</a>
+					<a href="#">
+						<li>Komunikat 1111111</li>
+					</a>
+					<a href="#">
+						<li>Komunikat 1111111</li>
+					</a>
+					<a href="#">
+						<li>Komunikat 1111111</li>
+					</a>
+					<a href="#">
+						<li>Komunikat 1111111</li>
+					</a>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Blog area -->
+	<section id="one" class="tiles">
+		{% set posts = blogPosts.posts %}
+		{{ posts|raw }}
+		{% for post in posts %}
+		{% if post.published > 0 %}
+		<article>
+			<span class="image">
+				<img src="{{'assets/images/pic01.jpg'|theme}}" alt="" />
+			</span>
+			<header class="major">
+				<h3><a href="{{ post.url }}" class="link">{{ post.title }}</a></h3>
+				<p class="info">
+					Zapostowano
+					{% if post.categories.count %} w kategorii: {% endif %}
+					{% for category in post.categories %}
+					<a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+					{% endfor %}
+					dnia: {{ post.published_at|date('d.m.Y') }}
+				</p>
+				<p class="excerpt">{{ post.summary|raw }}</p>
+			</header>
+		</article>
+		{% endif %}
+		{% endfor %}
+
+		{% if posts.lastPage > 1 %}
+		<ul class="pagination">
+			{% if posts.currentPage > 1 %}
+			<li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
+			{% endif %}
+
+			{% for page in 1..posts.lastPage %}
+			<li class="{{ posts.currentPage == page ? 'active' : null }}">
+				<a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+			</li>
+			{% endfor %}
+
+			{% if posts.lastPage > posts.currentPage %}
+			<li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+			{% endif %}
+		</ul>
+		{% endif %}
+
+
+
+
+
+
+
+		{# <article>
+			<span class="image">
+				<img src="{{'assets/images/pic02.jpg'|theme}}" alt="" />
+			</span>
+			<header class="major">
+				<h3><a href="{{ 'landing'|page }}" class="link">Staże</a></h3>
+				<p>Przypominamy, że od nowego roku harcerskiego staże ...</p>
+			</header>
+		</article>
+		<article>
+			<span class="image">
+				<img src="{{'assets/images/pic03.jpg'|theme}}" alt="" />
+			</span>
+			<header class="major">
+				<h3><a href="{{ 'landing'|page }}" class="link">Nowy wniosek do KSI</a></h3>
+				<p>Informujemy, że na stronie został ...</p>
+			</header>
+		</article>
+		<article>
+			<span class="image">
+				<img src="{{'assets/images/pic04.jpg'|theme}}" alt="" />
+			</span>
+			<header class="major">
+				<h3><a href="{{ 'landing'|page }}" class="link">Ipsum</a></h3>
+				<p>Nisl sed aliquam</p>
+			</header>
+		</article>
+		<article>
+			<span class="image">
+				<img src="{{'assets/images/pic05.jpg'|theme}}" alt="" />
+			</span>
+			<header class="major">
+				<h3><a href="{{ 'landing'|page }}" class="link">Consequat</a></h3>
+				<p>Ipsum dolor sit amet</p>
+			</header>
+		</article>
+		<article>
+			<span class="image">
+				<img src="{{'assets/images/pic06.jpg'|theme}}" alt="" />
+			</span>
+			<header class="major">
+				<h3><a href="{{ 'landing'|page }}" class="link">Etiam</a></h3>
+				<p>Feugiat amet tempus</p>
+			</header>
+		</article> #}
+	</section>
+
+	<!-- Two -->
+	<section id="two">
+		<div class="inner">
+			<header class="major">
+				<h2>Tu będzie kalendarz hufca</h2>
+			</header>
+			<p></p>
+			<img style='width: 60%;margin: 0 auto;position: relative;display: block;' src="https://www.emoji.co.uk/files/emoji-one/objects-emoji-one/1969-calendar.png"
+			 alt="calendarz - placeholder">
+		</div>
+	</section>
+
+</div>

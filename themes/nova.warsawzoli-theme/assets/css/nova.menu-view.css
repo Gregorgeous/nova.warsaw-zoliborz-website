@@ -1,0 +1,47 @@
+#menu .inner {
+    overflow: hidden;
+}
+
+.mobile-submenu-expanded{
+    background-color: #8da69e5c;
+    position: relative;
+    padding-top: 0.8em;
+    display: none;
+    opacity: 0;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 0!important;
+    padding-left: 0;
+    transition: transform .3s ease-out;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+.mobile-submenu-expanded.active{
+    display: flex;
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+.mobile-submenu-expanded li {
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    transition: all .2s ease-out;
+}
+
+.mobile-submenu-expanded li:hover {
+    background-color: #8c9e98;
+
+}
+
+.mobile-submenu-expanded::before {
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-color: rgba(36, 41, 67, 1);
+    top: -2px;
+    left: 41%;
+    clip-path: polygon(50% 27%, 0 0, 100% 0);
+}

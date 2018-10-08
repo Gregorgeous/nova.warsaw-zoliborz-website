@@ -1,0 +1,59 @@
+title = "Pojedyńczy-post"
+url = "/aktualnosci/post/:slug"
+layout = "default"
+description = "Strona z layoutem wyświetlającym pojedynczy post z hufcowego bloga \"Aktualności\"."
+is_hidden = 0
+
+[blogPost]
+slug = "{{ :slug }}"
+categoryPage = 404
+==
+{% set post = blogPost.post %}
+
+<!-- One -->
+<section id="one">
+	<div class="inner single-blog-post">
+		<header class="major">
+			<h1>{{post.title}}</h1>
+			<p class="info">
+				Zapostowano
+				{% if post.categories.count %} w kategorii: {% endif %}
+				{% for category in post.categories %}
+				<a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+				{% endfor %}
+				dnia: {{ post.published_at|date('d.m.Y') }}
+			</p>
+		</header>
+		{# {% if post.featured_images.count %}
+		<span class="image main">
+			{% for image in post.featured_images %}
+			<img data-src="{{ image.filename }}" src="{{ image.path }}" alt="{{ image.description }}" />
+			{% endfor %}
+		</span>
+		{% endif %} #}
+
+		<p>{{ post.content_html|raw }}</p>
+
+
+	</div>
+</section>
+
+<section id="two" class="blog-post-btns-area">
+		<a href="{{'home'|page}}" class="button special blog-action-btn">
+			<i class="fas fa-2x fa-angle-double-left"></i>
+			<span>Wróć do strony głównej</span>
+		</a>
+		<a href="#one" class="button blog-action-btn">
+			<i class="fas fa-2x fa-long-arrow-alt-left"></i>
+			<span>Poprzedni post</span>
+		</a>
+		<a href="#one" class="button blog-action-btn">
+			<span>Następny post</span>
+			<i class="fas fa-2x fa-long-arrow-alt-right"></i>
+		</a>
+</section>
+
+{# DEBUGGIN PURPOSES #}
+{# <section>
+	{{post}}
+</section> #}

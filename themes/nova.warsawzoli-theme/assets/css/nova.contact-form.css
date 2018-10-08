@@ -1,0 +1,19 @@
+#contact-form.inner{
+    margin-left: 0;
+}
+
+#contact-form  #contact-form--section {
+    padding: 3em 3em 2em 3em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-header{
+    text-decoration: underline;
+}
+
+#contact-form-actions li{
+    display: flex;
+    justify-content: center;
+}

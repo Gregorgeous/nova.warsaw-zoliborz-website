@@ -1,5 +1,5 @@
 title = "Home"
-url = "/"
+url = "/:page?"
 layout = "index"
 is_hidden = 0
 
@@ -8,7 +8,7 @@ injectBootstrapAssets = 0
 
 [blogPosts]
 pageNumber = "{{ :page }}"
-postsPerPage = 0
+postsPerPage = 6
 noPostsMessage = "No posts found"
 sortOrder = "published_at desc"
 categoryPage = 404
@@ -212,47 +212,54 @@ postPage = "singleBlogPost"
 
 	<!-- Blog area -->
 	<section id="one" class="tiles">
+
+
 		{% set posts = blogPosts.posts %}
-		{{ posts|raw }}
 		{% for post in posts %}
 		{% if post.published > 0 %}
 		<article>
-			<span class="image">
-				<img src="{{'assets/images/pic01.jpg'|theme}}" alt="" />
-			</span>
-			<header class="major">
-				<h3><a href="{{ post.url }}" class="link">{{ post.title }}</a></h3>
-				<p class="info">
-					Zapostowano
-					{% if post.categories.count %} w kategorii: {% endif %}
-					{% for category in post.categories %}
-					<a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-					{% endfor %}
-					dnia: {{ post.published_at|date('d.m.Y') }}
-				</p>
-				<p class="excerpt">{{ post.summary|raw }}</p>
-			</header>
-		</article>
-		{% endif %}
-		{% endfor %}
+			{% else %}
+			<article class='fade-unpublished'>
+				{% endif %}
 
-		{% if posts.lastPage > 1 %}
-		<ul class="pagination">
-			{% if posts.currentPage > 1 %}
-			<li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Prev</a></li>
-			{% endif %}
-
-			{% for page in 1..posts.lastPage %}
-			<li class="{{ posts.currentPage == page ? 'active' : null }}">
-				<a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
-			</li>
+				<span class="image">
+					<img src="{{'assets/images/pic01.jpg'|theme}}" alt="" />
+				</span>
+				<header class="major">
+					<h3><a href="{{ post.url }}" class="link">{{ post.title }}</a></h3>
+					<p class="info">
+						Zapostowano
+						{% if post.categories.count %} w kategorii: {% endif %}
+						{% for category in post.categories %}
+						<a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
+						{% endfor %}
+						dnia: {{ post.published_at|date('d.m.Y') }}
+					</p>
+					<p class="excerpt">{{ post.summary|raw }}</p>
+					{% if post.published == 0 %}
+					<p class='unpublished-post-message'>Post jeszcze nie opublikowany - widzisz go bo jesteś zalogowanym edytorem</p>
+					{% endif %}
+				</header>
+			</article>
 			{% endfor %}
 
-			{% if posts.lastPage > posts.currentPage %}
-			<li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Next &rarr;</a></li>
+			{% if posts.lastPage > 1 %}
+			<ul class="pagination">
+				{% if posts.currentPage > 1 %}
+				<li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Poprzednie</a></li>
+				{% endif %}
+
+				{% for page in 1..posts.lastPage %}
+				<li class="{{ posts.currentPage == page ? 'active' : null }}">
+					<a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+				</li>
+				{% endfor %}
+
+				{% if posts.lastPage > posts.currentPage %}
+				<li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Następne &rarr;</a></li>
+				{% endif %}
+			</ul>
 			{% endif %}
-		</ul>
-		{% endif %}
 
 
 

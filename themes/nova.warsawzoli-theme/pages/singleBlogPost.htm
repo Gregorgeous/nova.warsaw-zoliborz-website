@@ -8,6 +8,27 @@ is_hidden = 0
 slug = "{{ :slug }}"
 categoryPage = 404
 ==
+<?php
+function onEnd(){
+	// Tutaj zdobywam informację jaki numer "id" ma obecnie wyświetlany post
+	$this['thisPostId'] = $this -> post -> attributes['id']; 
+
+
+	// Tutaj ustawiamy tytul strony (który wyświetla się na karcie przeglądarki z tą otwartą stroną) na taki, jaki jest naglówek naszego posta.
+	if ($this->post){
+		$this->page->title = $this->post->title;
+	}
+	
+	// Tutaj pobieram informację z bazy danych o poprzednim poście (który jednocześnie jest opublikowany)
+	
+	$this['nextPost'] = Db::table ('rainlab_blog_posts') -> where('id', '>', $this['thisPostId']) -> where('published', 1) -> orderBy('id', 'asc') -> first();
+
+	// Tu robię to samo, ale żeby zdobyć następny post po tym, który jest obecnie wyświetlany
+	$this['previousPost'] = Db::table ('rainlab_blog_posts') -> where('id', '<', $this['thisPostId']) -> where('published', 1) -> orderBy('id', 'desc') -> first();
+
+}
+?>
+==
 {% set post = blogPost.post %}
 
 <!-- One -->

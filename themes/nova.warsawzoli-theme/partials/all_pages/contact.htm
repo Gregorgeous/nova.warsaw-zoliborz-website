@@ -2,50 +2,51 @@
 injectBootstrapAssets = 0
 ==
 <section id="contact">
-						<div id='contact-form' class="inner">
-							<section id='contact-form--section'>
-							    <div class="confirm-container">
-                                    <!--This will contain the confirmation when the email is successfully sent-->
-                                </div>
-								<h2 class='section-header'>Zapisz się do hufcowego newslettera!</h2>
-								<form class="ContactUsForm" role="form" data-request="contactForm::onMailSent" data-request-update="'contactForm::confirm': '.confirm-container'">
-									<div class="field half first">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" required/>
-									</div>
-									<ul id='contact-form-actions' class="actions">
-										<li><button type="submit" class="special" />Zapisz</button></li>
-									</ul>
-								</form>
-							</section>
-							<section class="split">
-								<section>
-									<div class="contact-method">
-										<span class="icon alt fa-envelope"></span>
-										<h3>Email</h3>
-										<a href="#">information@untitled.tld</a>
-									</div>
-								</section>
-								{# <section>
-									<div class="contact-method">
-										<span class="icon alt fa-phone"></span>
-										<h3>Phone</h3>
-										<span>(000) 000-0000 x12387</span>
-									</div>
-								</section> #}
-								<section>
-									<div class="contact-method">
-										<span class="icon alt fa-home"></span>
-										<h3>Address</h3>
-										<span>1234 Somewhere Road #5432<br />
-										Nashville, TN 00000<br />
-										United States of America</span>
-									</div>
-								</section>
-							</section>
-						</div>
-					</section>
+	<div id='contact-form' class="inner">
+		<section id='contact-form--section'>
+			<div class="confirm-container">
+				<!--This will contain the confirmation when the email is successfully sent-->
+			</div>
+			<h2 class='section-header'>Zapisz się do hufcowego newslettera!</h2>
+			<form class="ContactUsForm" role="form" data-request="contactForm::onMailSent" data-request-update="'contactForm::confirm': '.confirm-container'">
+				<div class="field half first">
+					<label for="name">Name</label>
+					<input type="text" name="name" id="name" />
+				</div>
+				<div class="field half">
+					<label for="email">Email</label>
+					<input type="text" name="email" id="email" required />
+				</div>
+				<ul id='contact-form-actions' class="actions">
+					<li><button type="submit" class="special" />Zapisz</button></li>
+				</ul>
+			</form>
+		</section>
+		<section class="split">
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-envelope"></span>
+					<h3>Email</h3>
+					<a href="mailto:biuro@zoliborz.zhp.pl">biuro@zoliborz.zhp.pl</a>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fa-home"></span>
+					<h3>Adres</h3>
+					<span>
+						ul. Przybyszewskiego 32/34<br />
+						01-824 Warszawa<br />
+					</span>
+				</div>
+			</section>
+			<section>
+				<div class="contact-method">
+					<span class="icon alt fab fa-facebook"></span>
+					<h3>Social media</h3>
+					<a href="https://www.facebook.com/ZHP.Zoliborz">www.facebook.com/ZHP.Zoliborz</a>
+				</div>
+			</section>
+		</section>
+	</div>
+</section>

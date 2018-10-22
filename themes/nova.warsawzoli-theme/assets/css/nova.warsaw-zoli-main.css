@@ -23,6 +23,12 @@
     flex-direction: column;
 }
 
+#banner>.inner>#subtitle {
+    align-items: flex-start;
+}
+
+
+
 .greetings-paragraph {
     margin-bottom: 1rem !important;
 }
@@ -353,4 +359,12 @@ header.major > :first-child:after{
     padding: 2em 0;
     display: flex;
     justify-content: space-evenly;
+}
+
+
+
+/* FOOTER adjustments */
+#footer .inner{
+    margin: 0;
+    padding: 15px;
 }

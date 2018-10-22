@@ -1,0 +1,52 @@
+description = "Szablon dla stron głównych"
+
+[staticPage]
+useContent = 1
+default = 1
+==
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	{% partial "html_base/meta_head" %}
+	<link rel="stylesheet" href="{{'assets/css/nova.static-pages.css'|theme}}">
+</head>
+
+<body>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		{% partial 'all_pages/header' %}
+
+		<!-- Menu -->
+		{% partial 'all_pages/menu' %}
+
+		<!-- Main -->
+		<div id="main">
+			{% page %}
+		</div>
+		
+		<section class="static-page-backbtn">
+			<a href="{{'home'|page}}" class="button special blog-action-btn">
+				<i class="fas fa-2x fa-angle-double-left"></i>
+				<span>Wróć do strony głównej</span>
+			</a>
+		</section>
+
+		<!-- Footer -->
+		{% partial 'all_pages/footer' %}
+
+	</div>
+
+	<!-- Scripts -->
+	{% partial "html_base/scripts" %}
+</body>
+
+</html>

@@ -250,6 +250,62 @@ ul.actions li {
 }
 
 
+/* BLOG LIST */
+
+#one.tiles{
+    position: relative;
+}
+
+.fade-unpublished{
+    filter: opacity(.6) saturate(.4);
+    padding: 4em 3em 0em 3em;
+}
+
+header.major p.unpublished-post-message{
+    font-style: italic;
+    /* text-decoration: underline; */
+    color: black;
+    font-size: 0.6em;
+    margin: 1.4em 0;
+}
+
+.pagination{
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    position: absolute;
+    bottom: -35px;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+.pagination li {
+    margin: 0 0.3em;
+    padding: 0 0.6em;
+    border: 1px solid #ffffff40;
+    transition: all .2s ease;
+    border-radius: 50px;
+}
+.pagination li.active {
+    background-color: #434343b5;
+    pointer-events: none;
+
+}
+
+.pagination li:hover{
+    background-color: #c6c6c6b5;
+}
+
+.pagination li a {
+    border-bottom: none;
+    color: white;
+}
+
+.pagination li a:hover {
+    color: white!important;
+}
+
 /* BLOG */
 header.major .info {
     font-style: italic;

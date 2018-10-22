@@ -1,6 +1,7 @@
 .DS_Store
 *.log
 backupy_bazy_danych_strony_hufca/
+.idea
 .vscode/
 codealike.json
 variousAssets/
@@ -8,10 +9,11 @@ themes/demo
 themes/responsiv-clean
 
 
-# Temporali gitignored:
+# Temporarily gitignored:
 bootstrap/
 storage/
 vendor/
 plugins/devinx
 plugins/october
 plugins/rainlab
+plugins/shahiemseymor

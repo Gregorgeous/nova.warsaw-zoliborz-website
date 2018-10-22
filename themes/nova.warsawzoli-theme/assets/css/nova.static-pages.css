@@ -1,0 +1,33 @@
+#main > * {
+    border-top: none;
+}
+
+#main > h1,#main > h2,#main > h3, #main > p {
+    padding: 0 50px;
+} 
+
+
+#main > p{
+    margin-bottom: 1em;
+}
+
+
+.static-page-backbtn{
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+}
+
+img.article-image[src='http://localhost/nowa.warszawazoliborz/storage/app/media/media.png']{
+    width: 50%!important;
+    margin: 0 auto;
+}
+
+.subtitle-less { 
+    height: unset!important;
+    min-height: unset!important;
+}
+
+
+
+

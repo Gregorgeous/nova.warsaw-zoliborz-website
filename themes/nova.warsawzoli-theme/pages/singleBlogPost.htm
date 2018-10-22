@@ -55,26 +55,32 @@ function onEnd(){
 
 		<p>{{ post.content_html|raw }}</p>
 
-
 	</div>
 </section>
 
 <section id="two" class="blog-post-btns-area">
-		<a href="{{'home'|page}}" class="button special blog-action-btn">
-			<i class="fas fa-2x fa-angle-double-left"></i>
-			<span>Wróć do strony głównej</span>
-		</a>
-		<a href="#one" class="button blog-action-btn">
-			<i class="fas fa-2x fa-long-arrow-alt-left"></i>
-			<span>Poprzedni post</span>
-		</a>
-		<a href="#one" class="button blog-action-btn">
-			<span>Następny post</span>
-			<i class="fas fa-2x fa-long-arrow-alt-right"></i>
-		</a>
-</section>
+	<a href="{{'home'|page}}" class="button special blog-action-btn">
+		<i class="fas fa-2x fa-angle-double-left"></i>
+		<span>Wróć do strony głównej</span>
+	</a>
 
-{# DEBUGGIN PURPOSES #}
-{# <section>
-	{{post}}
-</section> #}
+	<!-- Jeśli jesteś zalogowany jako edytor, będziesz mógł wyświetlić posty które jeszcze nie są opublikowane - w takim wypadku nie chcemy na takiej stronie wyświetlać przycisków  "poprzedni/następny post" bo te są skonstruowane tak, by odsyłać tylko do "najbliższych" opublikowanych postów  -->
+	{% if post.published > 0 %}
+	 <!-- Jeśli jest to obecnie pierwszy post (tj. zapytanie w bazie danych o opublikowany post z niższym id zwraca nam wartość NULL) to nie wyświetlamy przycisku "poprzedni post"  -->
+	{% if previousPost != null %}
+	<a href="{{previousPost.slug}}" class="button blog-action-btn">
+		<i class="fas fa-2x fa-long-arrow-alt-left"></i>
+		<span>Poprzedni post</span>
+	</a>
+	{% endif %}
+
+	<!-- Jeśli jest to obecnie ostatni post (tj. zapytanie w bazie danych o opublikowany post z wyższym id zwraca nam wartość NULL) to nie wyświetlamy przycisku "następny post" -->
+	{% if nextPost != null %}
+	<a href="{{nextPost.slug}}" class="button blog-action-btn">
+		<span>Następny post</span>
+		<i class="fas fa-2x fa-long-arrow-alt-right"></i>
+	</a>
+	{% endif %}
+	{% endif %}
+
+</section>

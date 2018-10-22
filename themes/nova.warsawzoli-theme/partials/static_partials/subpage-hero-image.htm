@@ -1,0 +1,15 @@
+description = "Centralne zdjęcie strony"
+
+[viewBag]
+snippetCode = "subpage-hero-image"
+snippetName = "Glowne zdjecie"
+snippetProperties[imagesrc][title] = "link do zdjęcia"
+snippetProperties[imagesrc][type] = "string"
+snippetProperties[imagesrc][default] = ""
+snippetProperties[imagesrc][options][] = ""
+snippetProperties[imagealt][title] = "opis zastępczy zdjęcia"
+snippetProperties[imagealt][type] = "string"
+snippetProperties[imagealt][default] = "Tutaj opisz pokrótce zdjęcie dla osób niewidomych, lub w razie niezaładowania obrazka"
+snippetProperties[imagealt][options][] = ""
+==
+<span class="image main"><img src="{{imagesrc}}" alt="{{imagealt}}" /></span>

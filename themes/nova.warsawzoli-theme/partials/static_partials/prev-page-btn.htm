@@ -1,0 +1,16 @@
+description = "Link do poprzedniej strony"
+
+[viewBag]
+snippetCode = "prev-page-btn"
+snippetName = "Odnośnik do poprzedniej strony"
+snippetProperties[url][title] = "Link poprzedniej strony"
+snippetProperties[url][type] = "string"
+snippetProperties[url][default] = "/"
+snippetProperties[url][options][] = ""
+==
+<section class="backbtn">
+    <a href="/nowa.warszawazoliborz{{url}}" class="button special blog-action-btn">
+        <i class="fas fa-2x fa-angle-double-left"></i>
+        <span>Wróć do poprzedniej strony</span>
+    </a>
+</section>

@@ -1,0 +1,36 @@
+description = "Nagłówek strony"
+
+[viewBag]
+snippetCode = "main-heading"
+snippetName = "Nagłówek ze zdjęciem dla stron głównych"
+snippetProperties[imagesrc][title] = "Link do zdjęcia"
+snippetProperties[imagesrc][type] = "string"
+snippetProperties[imagesrc][default] = "'assets/images/sample1.jpg'|theme"
+snippetProperties[imagesrc][options][] = ""
+snippetProperties[title][title] = "Nagłówek"
+snippetProperties[title][type] = "string"
+snippetProperties[title][default] = ""
+snippetProperties[title][options][] = ""
+snippetProperties[subtitle][title] = "Podtytuł"
+snippetProperties[subtitle][type] = "string"
+snippetProperties[subtitle][default] = ""
+snippetProperties[subtitle][options][] = ""
+==
+
+{% if subtitle == "" %}
+<section id="banner" class="style2 subtitle-less">
+{% else %}
+<section id="banner" class="style2">
+{% endif %}
+	<div class="inner">
+		<span class="image">
+			<img src="{{imagesrc}}" alt="" />
+		</span>
+		<header class="major">
+			<h1>{{title}}</h1>
+		</header>
+		<div class="content" id='subtitle'>
+			<p>{{subtitle}}<br />
+		</div>
+	</div>
+</section>

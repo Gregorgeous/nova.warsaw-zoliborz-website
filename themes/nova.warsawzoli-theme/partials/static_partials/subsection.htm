@@ -1,0 +1,39 @@
+[viewBag]
+snippetCode = "subsection-static"
+snippetName = "Odnośnik ze zdjęciem do podstrony"
+snippetProperties[link][title] = "Link do podstrony"
+snippetProperties[link][type] = "string"
+snippetProperties[link][default] = ""
+snippetProperties[link][options][] = ""
+snippetProperties[image][title] = "Link do zdjęcia"
+snippetProperties[image][type] = "string"
+snippetProperties[image][default] = "http://localhost/nowa.warszawazoliborz/storage/app/media/media.png"
+snippetProperties[image][options][] = ""
+snippetProperties[tytul][title] = "Tytuł podsekcji"
+snippetProperties[tytul][type] = "string"
+snippetProperties[tytul][default] = "Podsekcja"
+snippetProperties[tytul][options][] = ""
+snippetProperties[tresc][title] = "Treść podsekcji"
+snippetProperties[tresc][type] = "string"
+snippetProperties[tresc][default] = "Treść podsekcji"
+snippetProperties[tresc][options][] = ""
+==
+<section id="two" class="spotlights">
+		<section>
+			<a href="/nowa.warszawazoliborz{{link}}" class="image">
+				<img src="{{image}}" alt="" class='article-image'
+				 data-position="center center" />
+			</a>
+			<div class="content">
+				<div class="inner">
+					<header class="major">
+						<h3>{{tytul}}</h3>
+					</header>
+					<p>{{tresc}}</p>
+					<ul class="actions">
+						<li><a href="/nowa.warszawazoliborz{{link}}" class="button">Sprawdź</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</section>

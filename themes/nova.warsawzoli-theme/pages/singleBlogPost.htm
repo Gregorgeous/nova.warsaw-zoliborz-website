@@ -36,14 +36,6 @@ function onEnd(){
 	<div class="inner single-blog-post">
 		<header class="major">
 			<h1>{{post.title}}</h1>
-			<p class="info">
-				Zapostowano
-				{% if post.categories.count %} w kategorii: {% endif %}
-				{% for category in post.categories %}
-				<a href="{{ category.url }}">{{ category.name }}</a>{% if not loop.last %}, {% endif %}
-				{% endfor %}
-				dnia: {{ post.published_at|date('d.m.Y') }}
-			</p>
 		</header>
 		{# {% if post.featured_images.count %}
 		<span class="image main">

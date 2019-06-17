@@ -1,0 +1,66 @@
+title = "Lista rozkazów"
+url = "/rozkazy"
+layout = "index"
+description = "List of all the orders in the website's database."
+is_hidden = 0
+
+[builderList]
+modelClass = "ScoutsWarsawZoliborz\RozkazyHufca\Models\Rozkaz"
+scope = "-"
+scopeValue = "{{ :scope }}"
+displayColumn = "order_issue_number"
+noRecordsMessage = "Brak rozkazów"
+detailsPage = "rozkaz"
+detailsKeyColumn = "id"
+detailsUrlParameter = "id"
+pageNumber = "{{ :page }}"
+sortColumn = "order_date"
+sortDirection = "desc"
+==
+<h1> Lista rozkazów </h1>
+{% set records = builderList.records %}
+{% set displayColumn = builderList.displayColumn %}
+{% set noRecordsMessage = builderList.noRecordsMessage %}
+{% set detailsPage = builderList.detailsPage %}
+{% set detailsKeyColumn = builderList.detailsKeyColumn %}
+{% set detailsUrlParameter = builderList.detailsUrlParameter %}
+
+{% for record in records %}
+        {# Use spaceless tag to remove spaces inside the A tag. #}
+        {% spaceless %}
+            {% if detailsPage %}
+                <a href="{{ detailsPage|page({ (detailsUrlParameter): attribute(record, detailsKeyColumn) }) }}">
+            {% endif %}
+
+            Rozkaz {% if record.is_special_order %} Specjalny {% endif %} L{{ attribute(record, displayColumn) }}/{{ str_limit(record.order_date,4, '')   }}
+
+            {% if detailsPage %}
+                </a>
+                <br>
+            {% endif %}
+        {% endspaceless %}
+{% else %}
+    <p class="no-data">{{ noRecordsMessage }}</p>
+{% endfor %}
+
+{% if records.lastPage > 1 %}
+    <ul class="pagination">
+        {% if records.currentPage > 1 %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage-1) }) }}">&larr; Prev</a></li>
+        {% endif %}
+
+        {% for page in 1..records.lastPage %}
+            <li class="{{ records.currentPage == page ? 'active' : null }}">
+                <a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+            </li>
+        {% endfor %}
+
+        {% if records.lastPage > records.currentPage %}
+            <li><a href="{{ this.page.baseFileName|page({ (pageParam): (records.currentPage+1) }) }}">Next &rarr;</a></li>
+        {% endif %}
+    </ul>
+{% endif %}
+
+<hr>
+<h2>Szukasz starszych rozkazów?</h2>
+<h3>Sprawdź na archiwalnej stronie hufca: <a href="http://warszawazoliborz.zhp.pl/rozkazy">www.warszawazoliborz.zhp.pl/rozkazy</a>  </h3>

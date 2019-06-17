@@ -1,0 +1,10 @@
+name: MailsList
+form: $/scoutswarsawzoliborz/listamailingowarozkazy/models/jedenmail/fields.yaml
+modelClass: ScoutsWarsawZoliborz\ListaMailingowaRozkazy\Models\JedenMail
+defaultRedirect: scoutswarsawzoliborz/listamailingowarozkazy/mailslist
+create:
+    redirect: 'scoutswarsawzoliborz/listamailingowarozkazy/mailslist/update/:id'
+    redirectClose: scoutswarsawzoliborz/listamailingowarozkazy/mailslist
+update:
+    redirect: scoutswarsawzoliborz/listamailingowarozkazy/mailslist
+    redirectClose: scoutswarsawzoliborz/listamailingowarozkazy/mailslist

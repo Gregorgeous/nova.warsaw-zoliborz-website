@@ -1,0 +1,13 @@
+fields:
+    fullname:
+        label: 'Imię i nazwisko'
+        span: full
+        placeholder: 'Jan Kowalski'
+        required: 1
+        type: text
+    mail:
+        label: 'Adres Email'
+        span: full
+        placeholder: test@gmail.com
+        required: 1
+        type: text

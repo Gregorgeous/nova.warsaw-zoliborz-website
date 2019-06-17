@@ -1,0 +1,13 @@
+columns:
+    fullname:
+        label: 'Imię i nazwisko'
+        type: text
+        searchable: true
+        sortable: true
+    mail:
+        label: 'Adres email'
+        type: text
+    created_at:
+        label: 'Zapisane dnia'
+        type: date
+        sortable: true

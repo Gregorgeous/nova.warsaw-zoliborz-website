@@ -1,0 +1,11 @@
+plugin:
+    name: 'scoutswarsawzoliborz.listamailingowarozkazy::lang.plugin.name'
+    description: 'scoutswarsawzoliborz.listamailingowarozkazy::lang.plugin.description'
+    author: 'Scout District Warsaw-Zoliborz'
+    icon: oc-icon-group
+    homepage: ''
+navigation:
+    mails-list-main:
+        label: 'Lista mailingowa'
+        url: scoutswarsawzoliborz/listamailingowarozkazy/mailslist
+        icon: icon-group

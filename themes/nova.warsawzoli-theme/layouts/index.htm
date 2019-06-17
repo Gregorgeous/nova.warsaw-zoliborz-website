@@ -1,4 +1,7 @@
 description = "Home layout"
+
+[staticMenu MenuGlowne]
+code = "menu-glowne"
 ==
 <!DOCTYPE HTML>
 <!--
@@ -19,7 +22,9 @@ description = "Home layout"
 					{% partial 'all_pages/header' %}
 
 				<!-- Menu -->
-					{% partial 'all_pages/menu' %}
+					{% if MenuGlowne.menuItems %}
+						{% partial 'all_pages/menu' items=MenuGlowne.menuItems %}
+					{% endif %}
 
 				        {% page %}
 

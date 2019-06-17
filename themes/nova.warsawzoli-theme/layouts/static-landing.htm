@@ -3,6 +3,9 @@ description = "Szablon dla stron głównych"
 [staticPage]
 useContent = 1
 default = 1
+
+[staticMenu MenuGlowne]
+code = "menu-glowne"
 ==
 <!DOCTYPE HTML>
 <!--
@@ -26,7 +29,9 @@ default = 1
 		{% partial 'all_pages/header' %}
 
 		<!-- Menu -->
-		{% partial 'all_pages/menu' %}
+		{% if MenuGlowne.menuItems %}
+			{% partial 'all_pages/menu' items=MenuGlowne.menuItems %}
+		{% endif %}
 
 		<!-- Main -->
 		<div id="main">

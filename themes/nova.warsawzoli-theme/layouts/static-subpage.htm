@@ -3,6 +3,9 @@ description = "Szablon dla podstron"
 [staticPage]
 useContent = 1
 default = 0
+
+[staticMenu MenuGlowne]
+code = "menu-glowne"
 ==
 <!DOCTYPE HTML>
 <!--
@@ -25,7 +28,9 @@ default = 0
 		{% partial 'all_pages/header' %}
 
 		<!-- Menu -->
-		{% partial 'all_pages/menu' %}
+		{% if MenuGlowne.menuItems %}
+			{% partial 'all_pages/menu' items=MenuGlowne.menuItems %}
+		{% endif %}
 
 		<!-- Main -->
 		<div id="main" class="alt">

@@ -1,4 +1,7 @@
 description = "Landing page layout"
+
+[staticMenu MenuGlowne]
+code = "menu-glowne"
 ==
 <!DOCTYPE HTML>
 <!--
@@ -19,7 +22,9 @@ description = "Landing page layout"
 					{% partial 'all_pages/header' %}
 
 				<!-- Menu -->
-					{% partial 'all_pages/menu' %}
+					{% if MenuGlowne.menuItems %}
+						{% partial 'all_pages/menu' items=MenuGlowne.menuItems %}
+					{% endif %}
 								
 				<!-- Main -->
 					<div id="main">

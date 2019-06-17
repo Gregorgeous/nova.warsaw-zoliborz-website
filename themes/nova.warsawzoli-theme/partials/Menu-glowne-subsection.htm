@@ -1,0 +1,16 @@
+[viewBag]
+==
+<section id='desktop-submenu' data-menu-name='{{submenu_to}}'>
+{% for item in items %}
+<div class="submenu" >
+        <a  {% if item.url %} href="{{ item.url }}"{% endif %}>
+            <div>
+                {% if item.viewBag.cssClass %}
+                <i class="{{item.viewBag.cssClass}} fa-2x"></i>
+                {% endif %}
+                <span>{{item.title}}</span>
+            </div>
+        </a>
+    </div>
+{% endfor %}
+</section>

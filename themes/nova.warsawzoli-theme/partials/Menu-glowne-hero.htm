@@ -1,0 +1,18 @@
+[viewBag]
+==
+<div class="hero-menu">
+    {% set numOfMenuItems = items|length %}
+    <ul id='desktopMenu' {% if numOfMenuItems >=6 %} class="links actions vertical scroll-applied"  
+        {% else %} class="links actions vertical"{% endif %} >
+        {% for item in items %}
+            <li>
+                <a  
+                    class='{{item.viewBag.cssClass}} button fit menu-link'
+                    {% if item.url %} href="{{ item.url }}"{% endif %}
+                    data-menu-name='{{item.title}}'>
+                    {{ item.title }} 
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

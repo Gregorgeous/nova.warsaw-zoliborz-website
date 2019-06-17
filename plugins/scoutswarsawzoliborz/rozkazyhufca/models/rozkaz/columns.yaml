@@ -1,0 +1,18 @@
+columns:
+    is_special_order:
+        label: 'Rozkaz specjalny ? '
+        type: switch
+    order_issue_number:
+        label: 'Numer rozkazu'
+        type: number
+        searchable: true
+        sortable: true
+    order_date:
+        label: 'Data rozkazu'
+        type: date
+        searchable: true
+        sortable: true
+    order_content:
+        label: 'Treść rozkazu'
+        type: text
+        searchable: true

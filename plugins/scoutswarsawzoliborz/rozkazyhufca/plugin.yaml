@@ -1,0 +1,11 @@
+plugin:
+    name: 'scoutswarsawzoliborz.rozkazyhufca::lang.plugin.name'
+    description: 'Plugin do tworzenia i wyświetlania rozkazów hufca.'
+    author: 'Scout District Warsaw-Zoliborz'
+    icon: oc-icon-star
+    homepage: ''
+navigation:
+    rozkazy-main-menu:
+        label: Rozkazy
+        url: scoutswarsawzoliborz/rozkazyhufca/rozkazyhufca
+        icon: icon-star

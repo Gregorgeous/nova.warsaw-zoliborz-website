@@ -1,0 +1,4 @@
+title: RozkazyHufca
+modelClass: ScoutsWarsawZoliborz\RozkazyHufca\Models\Rozkaz
+toolbar:
+    buttons: reorder_toolbar

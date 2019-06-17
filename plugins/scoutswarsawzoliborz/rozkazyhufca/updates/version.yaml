@@ -1,0 +1,11 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table scoutswarsawzoliborz_rozkazyhufca_rozkazy'
+    - builder_table_create_scoutswarsawzoliborz_rozkazyhufca_rozkazy.php
+1.0.3:
+    - 'Updated table scoutswarsawzoliborz_rozkazyhufca_rozkazy'
+    - builder_table_update_scoutswarsawzoliborz_rozkazyhufca_rozkazy.php
+1.0.4:
+    - 'Updated table scoutswarsawzoliborz_rozkazyhufca_rozkazy'
+    - builder_table_update_scoutswarsawzoliborz_rozkazyhufca_rozkazy_2.php

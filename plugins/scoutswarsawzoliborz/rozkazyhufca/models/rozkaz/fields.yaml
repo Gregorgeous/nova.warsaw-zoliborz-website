@@ -1,0 +1,30 @@
+fields:
+    order_issue_number:
+        label: 'Numer rozkazu'
+        span: left
+        placeholder: '1'
+        required: 1
+        type: text
+        comment: 'Podaj tylko liczbę, bez "L" i bez ukośnika z bieżącym rokiem.'
+    order_date:
+        label: 'Data rozkazu'
+        mode: date
+        minDate: '2019-01-01'
+        span: right
+        placeholder: ''
+        oc.commentPosition: below
+        type: datepicker
+    is_special_order:
+        label: 'Rozkaz specjalny?'
+        span: full
+        default: 0
+        required: 1
+        type: switch
+        comment: 'Suwak na zielono = rozkaz specjalny, na czerwono = rozkaz zwyczajny.'
+    order_content:
+        label: 'Treść rozkazu'
+        size: giant
+        oc.commentPosition: above
+        span: full
+        placeholder: ''
+        type: richeditor

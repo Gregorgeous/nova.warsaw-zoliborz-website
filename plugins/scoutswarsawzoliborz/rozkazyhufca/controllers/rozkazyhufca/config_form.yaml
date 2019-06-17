@@ -1,0 +1,10 @@
+name: RozkazyHufca
+form: $/scoutswarsawzoliborz/rozkazyhufca/models/rozkaz/fields.yaml
+modelClass: ScoutsWarsawZoliborz\RozkazyHufca\Models\Rozkaz
+defaultRedirect: scoutswarsawzoliborz/rozkazyhufca/rozkazyhufca
+create:
+    redirect: 'scoutswarsawzoliborz/rozkazyhufca/rozkazyhufca/update/:id'
+    redirectClose: scoutswarsawzoliborz/rozkazyhufca/rozkazyhufca
+update:
+    redirect: scoutswarsawzoliborz/rozkazyhufca/rozkazyhufca
+    redirectClose: scoutswarsawzoliborz/rozkazyhufca/rozkazyhufca

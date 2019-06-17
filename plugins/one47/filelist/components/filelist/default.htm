@@ -1,0 +1,15 @@
+<div class="fl-style files">
+    {% if filelist.files|length > 0 %}
+      {% for i, file in filelist.files %}
+        <div class='files_card'>
+          <h3 class='files__header'>PLIK {{i}}: {{ file.title }}</h3>
+          {% if file.description %}
+            <p class='files__description'>Opis: {{ file.description }}</p>
+          {% endif %}
+          <span class='files__spannk'>LINK: <a href="{{ file.path }}" target="_blank" >{{ file.title }}</a></li>
+        </div>
+      {% endfor %}
+      {% else %}
+      <h3>Brak plików do wyświetlenia</h3>
+    {% endif %}
+</div>

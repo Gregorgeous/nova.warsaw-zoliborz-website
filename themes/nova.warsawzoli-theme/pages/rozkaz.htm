@@ -1,0 +1,35 @@
+title = "Rozkaz"
+url = "/rozkazy/rozkaz/:id"
+layout = "static-subpage"
+description = "This sub-page displays the single order (\"rozkaz\") once clicked by the user on the orders list view."
+is_hidden = 0
+
+[builderDetails]
+modelClass = "ScoutsWarsawZoliborz\RozkazyHufca\Models\Rozkaz"
+identifierValue = "{{ :id }}"
+modelKeyColumn = "id"
+displayColumn = "order_issue_number"
+notFoundMessage = "Nie ma takiego rozkazu lub został on usunięty ..."
+==
+<?php
+
+?>
+==
+{% set record = builderDetails.record %}
+{% set displayColumn = builderDetails.displayColumn %}
+{% set notFoundMessage = builderDetails.notFoundMessage %}
+{% if record %}
+
+    <h1>Rozkaz {% if record.is_special_order %} Specjalny {% endif %} L{{ attribute(record, displayColumn) }}/{{ str_limit(record.order_date,4, '')   }}</h1>
+    <h2>Data rozkazu: {{record.order_date}}  </h2>
+    <hr>
+    {{record.order_content|raw}}
+
+{% else %}
+    {{ notFoundMessage }}
+{% endif %}
+
+<a href="{{'lista-rozkazow'|page}}" class="button special blog-action-btn">
+    <i class="fas fa-2x fa-angle-double-left"></i>
+    <span>Wróć do strony głównej</span>
+</a>

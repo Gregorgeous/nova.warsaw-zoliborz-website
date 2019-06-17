@@ -71,7 +71,7 @@ sortDirection = "desc"
 
 		{% for item in MenuGlowne.menuItems %}
 			{% if item.items %}
-				{% partial 'Menu-glowne-subsection-test' items=item.items submenu_to=item.title %}
+				{% partial 'Menu-glowne-subsection' items=item.items submenu_to=item.title %}
 			{% endif %}
 		{% endfor %}
 

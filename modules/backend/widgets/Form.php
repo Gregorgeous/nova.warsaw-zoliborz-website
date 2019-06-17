@@ -240,7 +240,7 @@ class Form extends WidgetBase
     public function renderField($field, $options = [])
     {
         $this->prepareVars();
-        
+
         if (is_string($field)) {
             if (!isset($this->allFields[$field])) {
                 throw new ApplicationException(Lang::get(
@@ -934,6 +934,7 @@ class Form extends WidgetBase
         $widgetConfig->previewMode = $this->previewMode;
         $widgetConfig->model = $this->model;
         $widgetConfig->data = $this->data;
+        $widgetConfig->parentForm = $this;
 
         $widgetName = $widgetConfig->widget;
         $widgetClass = $this->widgetManager->resolveFormWidget($widgetName);
@@ -1074,7 +1075,10 @@ class Form extends WidgetBase
             ? $field->getDefaultFromData($this->data)
             : null;
 
-        return $field->getValueFromData($this->data, $defaultValue);
+        return $field->getValueFromData(
+            $this->data, 
+            is_string($defaultValue) ? trans($defaultValue) : $defaultValue
+        );
     }
 
     /**

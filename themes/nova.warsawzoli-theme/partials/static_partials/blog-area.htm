@@ -1,0 +1,67 @@
+description = "Obszar blogowy (kafelki-posty)"
+
+[viewBag]
+snippetCode = "blog-area"
+snippetName = "Obszar blogowy (kafelkowe-posty)"
+snippetProperties[PostsCategory][title] = "Kategoria postów"
+snippetProperties[PostsCategory][type] = "dropdown"
+snippetProperties[PostsCategory][default] = ""
+snippetProperties[PostsCategory][options][strona-glowna] = "strona główna"
+snippetProperties[PostsCategory][options][ksi] = "posty do ksi"
+
+[blogPosts]
+pageNumber = "{{ :page }}"
+categoryFilter = "{{PostsCategory}}"
+postsPerPage = 0
+noPostsMessage = "No posts found"
+sortOrder = "published_at desc"
+categoryPage = 404
+postPage = "singleBlogPost"
+==
+==
+<section id="one" class="tiles">
+
+		{% set posts = blogPosts.posts %}
+		<!-- {% set category = blogPosts.category %} -->
+		<!-- <p>
+		{{blogPosts.categoryFilter}} 
+		</p> -->
+		{% for post in posts %}
+		{% if post.published > 0 %}
+		<article>
+			{% else %}
+			<article class='fade-unpublished'>
+				{% endif %}
+				
+
+				<span class="image">
+					<img src="{{'assets/images/pic01.jpg'|theme}}" alt="" />
+				</span>
+				<header class="major">
+					<h3><a href="{{ post.url }}" class="link">{{ post.title }}</a></h3>
+					<p class="excerpt">{{ post.summary|raw }}</p>
+					{% if post.published == 0 %}
+					<p class='unpublished-post-message'>Post jeszcze nie opublikowany - widzisz go bo jesteś zalogowanym edytorem</p>
+					{% endif %}
+				</header>
+			</article>
+			{% endfor %}
+
+			{% if posts.lastPage > 1 %}
+			<ul class="pagination">
+				{% if posts.currentPage > 1 %}
+				<li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage-1) }) }}">&larr; Poprzednie</a></li>
+				{% endif %}
+
+				{% for page in 1..posts.lastPage %}
+				<li class="{{ posts.currentPage == page ? 'active' : null }}">
+					<a href="{{ this.page.baseFileName|page({ (pageParam): page }) }}">{{ page }}</a>
+				</li>
+				{% endfor %}
+
+				{% if posts.lastPage > posts.currentPage %}
+				<li><a href="{{ this.page.baseFileName|page({ (pageParam): (posts.currentPage+1) }) }}">Następne &rarr;</a></li>
+				{% endif %}
+			</ul>
+			{% endif %}
+	</section>
